@@ -1,0 +1,33 @@
+[project]
+name = "type-annotation"
+version = "0.1.0"
+description = "Python Typing - Solutions"
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.10",
+    "ruff>=0.8",
+]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = true
+check_untyped_defs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+no_implicit_optional = true
+warn_redundant_casts = true
+allow_redefinition = true
+disable_error_code = ["empty-body"]
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+
+[tool.ruff.lint.per-file-ignores]
+"challenges/**" = ["E402", "E501"]
